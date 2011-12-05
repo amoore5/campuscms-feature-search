@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the search feature.
+ */
+function campuscms_feature_search_install() {
+  // Change the url of the search form.
+  $alias = array(
+    'source' => 'gsearch',
+    'alias' => 'search',
+  );
+
+  path_save($alias);
+}
