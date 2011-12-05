@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the UC Merced Search feature.
+ */
+
+include_once('campuscms_feature_search.features.inc');
