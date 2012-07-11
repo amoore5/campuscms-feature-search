@@ -3,4 +3,4 @@ core = 7.x
 api = 2
 
 ; Contrib modules
-projects[google_appliance] = 1.6
+projects[google_appliance] = 1.7
