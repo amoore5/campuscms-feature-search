@@ -4,4 +4,46 @@
  * Code for the UC Merced Search feature.
  */
 
-include_once('campuscms_feature_search.features.inc');
+/**
+ * Implements hook_theme().
+ *
+ * Define custom theme hooks
+ */
+function campuscms_feature_search_theme($existing, $type , $theme, $path) {
+  return array(
+    'campuscms_feature_search_box' => array(
+      'variables' => array(),
+      'template' => 'campuscms-feature-search-box',
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_block_info()
+ *
+ */
+function campuscms_feature_search_block_info() {
+  $blocks['google_custom_search_box'] = array(
+    'info' => t('Google Custom Search'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view
+ *
+ * Define callbacks for block display
+ *
+ */
+function campuscms_feature_search_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'google_custom_search_box':
+      $block['content'] = theme('campuscms_feature_search_box');
+      break;
+  }
+
+  return $block;
+}
